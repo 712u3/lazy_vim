@@ -1,0 +1,564 @@
+return {}
+
+-- return {
+--   {
+--     "LazyVim/LazyVim",
+--     opts = {
+--       icons = {
+--         diagnostics = {
+--           Error = "× ",
+--           Warn  = "! ",
+--           Hint  = "¦ ",
+--           Info  = "i ",
+--         },
+--         git = {
+--           added    = "+ ",
+--           modified = "~ ",
+--           removed  = "- ",
+--         },
+--       },
+-- --       misc = {
+-- --         dots = "⓪",
+-- --       },
+-- --       ft = {
+-- --         octo = "⓺",
+-- --       },
+-- --       kinds = {
+-- --         Array         = "A ",
+-- --         Boolean       = "B ",
+-- --         Class         = "C ",
+-- --         Codeium       = "D ",
+-- --         Color         = "E ",
+-- --         Control       = "F ",
+-- --         Collapsed     = "G ",
+-- --         Constant      = "H ",
+-- --         Constructor   = "I ",
+-- --         Copilot       = "G ",
+-- --         Enum          = "K ",
+-- --         EnumMember    = "L ",
+-- --         Event         = "M ",
+-- --         Field         = "N ",
+-- --         File          = "O ",
+-- --         Folder        = "P ",
+-- --         Function      = "Q ",
+-- --         Interface     = "R ",
+-- --         Key           = "S ",
+-- --         Keyword       = "T ",
+-- --         Method        = "U ",
+-- --         Module        = "V ",
+-- --         Namespace     = "W ",
+-- --         Null          = "X ",
+-- --         Number        = "Y ",
+-- --         Object        = "Z ",
+-- --         Operator      = "a ",
+-- --         Package       = "b ",
+-- --         Property      = "c ",
+-- --         Reference     = "d ",
+-- --         Snippet       = "e ",
+-- --         String        = "f ",
+-- --         Struct        = "g ",
+-- --         TabNine       = "h ",
+-- --         Text          = "i ",
+-- --         TypeParameter = "j ",
+-- --         Unit          = "k ",
+-- --         Value         = "l ",
+-- --         Variable      = "m ",
+-- --       },
+--     }
+--   },
+--
+--   {
+--     "nvim-neo-tree/neo-tree.nvim",
+--     opts = {
+--       default_component_configs = {
+--         indent = {
+--           expander_collapsed = "⏵",
+--           expander_expanded = "⏷",
+--         },
+--         git_status = {
+--           symbols = {
+--             added     = " ",
+--             modified  = " ",
+--             deleted   = " ",
+--             renamed   = " ",
+--             untracked = " ",
+--             ignored   = " ",
+--             conflict  = " ",
+--             unstaged = " ",
+--             staged = " ",
+--           },
+--         },
+--         icon = {
+--           folder_closed = " ",  -- ▰⧠
+--           folder_open = " ",
+--           folder_empty = " ",
+--           default = " ",
+--         }
+--       },
+--     },
+--   },
+--
+--   {
+--     "echasnovski/mini.icons",
+--     enabled = false,
+--     opts = {
+--       style = 'ascii',
+--     },
+--   },
+--
+--   {
+--     "folke/which-key.nvim",
+--     opts = {
+--       icons = {
+--         mappings = false,
+--         keys = {
+--           Up = "↑",
+--           Down = "↓",
+--           Left = "←",
+--           Right = "→",
+--           C = "^",
+--           M = "⌥",
+--           D = "_D",  -- wtf??
+--           S = "⇬",
+--           CR = "↲",
+--           Esc = "␛",
+--           ScrollWheelDown = "⇓",
+--           ScrollWheelUp = "⇑",
+--           NL = "␤",
+--           BS = "⌫",
+--           Space = "⏘",
+--           Tab = "⇥",
+--           F1 = "f1",
+--           F2 = "f2",
+--           F3 = "f3",
+--           F4 = "f4",
+--           F5 = "f5",
+--           F6 = "f6",
+--           F7 = "f7",
+--           F8 = "f8",
+--           F9 = "f9",
+--           F10 = "f⒑",
+--           F11 = "f⒒",
+--           F12 = "f⒓",
+--         },
+--       },
+--     },
+--   },
+--
+--   {
+--     "nvimdev/dashboard-nvim",
+--     lazy = false,
+--     opts = function()
+-- --       local logo = [[
+-- --            ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
+-- --            ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z
+-- --            ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z
+-- --            ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z
+-- --            ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║
+-- --            ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝
+-- --       ]]
+--       local logo = [[
+--                                             ▓▓
+--                                           ████
+--                                                 ██  ██      ██
+--                                             ██    ████████
+--                                           ██            ██
+--                                             ██          ██
+--                                         ██████      ██        ████████
+--                                 ████████▒▒██████    ██          ██
+--                             ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒████  ██      ██
+--                       ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██  ██  ██
+--                     ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒██  ██
+--               ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒██
+--               ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒██
+--       ██████████▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██
+--       ██▒▒▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒████
+--       ██▒▒▒▒▒▒████▒▒▒▒▒▒▒▒██▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒██
+--         ██▒▒████  ██▒▒▒▒▒▒▒▒████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████▒▒▒▒██
+--         ████    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██  ██▒▒██
+--                 ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ██▒▒██
+--                 ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████      ██▒▒██
+--                 ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████████          ████
+-- ██████▒▒▒▒▒▒▒▒▒▒▒▒██▒▒▒▒██
+-- ██▒▒▒▒▒▒████████████▒▒▒▒▒▒▒▒██
+-- ██▒▒▒▒▒▒██          ██▒▒▒▒▒▒██
+-- ████████            ██▒▒▒▒▒▒██
+--                     ██████
+--       ]]
+--
+--       logo = string.rep("\n", 8) .. logo .. "\n\n"
+--
+--       local opts = {
+--         theme = "doom",
+--         hide = {
+--           statusline = false,
+--         },
+--         config = {
+--           header = vim.split(logo, "\n"),
+--           -- stylua: ignore
+--           center = {
+--             { action = "ene | startinsert",                              desc = " New File",        icon = "⛘ ", key = "n" },
+--             { action = 'lua LazyVim.pick("oldfiles")()',                 desc = " Recent Files",    icon = "⏲ ", key = "r" },
+--             { action = 'lua LazyVim.pick("live_grep")()',                desc = " Find Text",       icon = "⌕ ", key = "g" },
+--             { action = 'lua LazyVim.pick.config_files()()',              desc = " Config",          icon = "⚙ ", key = "c" },
+--             { action = 'lua require("persistence").load()',              desc = " Restore Session", icon = "↺ ", key = "s" },
+--             { action = "LazyExtras",                                     desc = " Lazy Extras",     icon = "⚒ ", key = "x" },
+--             { action = "Lazy",                                           desc = " Lazy",            icon = "λ ", key = "l" },
+--             { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = " Quit",            icon = "⍇ ", key = "q" },
+--           },
+--           footer = function()
+--             local stats = require("lazy").stats()
+--             local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+--             return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+--           end,
+--         },
+--       }
+--
+--       for _, button in ipairs(opts.config.center) do
+--         button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
+--         button.key_format = "  %s"
+--       end
+--
+--       if vim.o.filetype == "lazy" then
+--         vim.api.nvim_create_autocmd("WinClosed", {
+--           pattern = tostring(vim.api.nvim_get_current_win()),
+--           once = true,
+--           callback = function()
+--             vim.schedule(function()
+--               vim.api.nvim_exec_autocmds("UIEnter", { group = "dashboard" })
+--             end)
+--           end,
+--         })
+--       end
+--
+--       return opts
+--     end,
+--   },
+--
+--
+--
+--   {
+--     "akinsho/bufferline.nvim",
+--     opts = {
+--       options = {
+--         -- stylua: ignore
+--         close_command = function(n) LazyVim.ui.bufremove(n) end,
+--         -- stylua: ignore
+--         right_mouse_command = function(n) LazyVim.ui.bufremove(n) end,
+--         diagnostics = "nvim_lsp",
+--         always_show_bufferline = false,
+--         diagnostics_indicator = function(_, _, diag)
+--           local icons = LazyVim.config.icons.diagnostics
+--           local ret = (diag.error and icons.Error .. diag.error .. " " or "")
+--             .. (diag.warning and icons.Warn .. diag.warning or "")
+--           return vim.trim(ret)
+--         end,
+--         offsets = {
+--           {
+--             filetype = "neo-tree",
+--             text = "Neo-tree",
+--             highlight = "Directory",
+--             text_align = "left",
+--           },
+--         },
+--         ---@param opts bufferline.IconFetcherOpts
+--         get_element_icon = function(opts)
+--           return LazyVim.config.icons.ft[opts.filetype]
+--         end,
+--         buffer_close_icon = '✖',
+--         modified_icon = '● ',
+--         close_icon = '✖ ',
+--         left_trunc_marker = '← ',
+--         right_trunc_marker = '→ ',
+--       },
+--     },
+--   },
+--
+--
+--   {
+--     "lewis6991/gitsigns.nvim",
+--     opts = {
+--       signs = {
+--         add = { text = "▎" },
+--         change = { text = "▎" },
+--         delete = { text = "►" },
+--         topdelete = { text = "►" },
+--         changedelete = { text = "▎" },
+--         untracked = { text = "▎" },
+--       },
+--       signs_staged = {
+--         add = { text = "▎" },
+--         change = { text = "▎" },
+--         delete = { text = "►" },
+--         topdelete = { text = "►" },
+--         changedelete = { text = "▎" },
+--       },
+--       on_attach = function(buffer)
+--         local gs = package.loaded.gitsigns
+--
+--         local function map(mode, l, r, desc)
+--           vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+--         end
+--
+--         -- stylua: ignore start
+--         map("n", "]h", function()
+--           if vim.wo.diff then
+--             vim.cmd.normal({ "]c", bang = true })
+--           else
+--             gs.nav_hunk("next")
+--           end
+--         end, "Next Hunk")
+--         map("n", "[h", function()
+--           if vim.wo.diff then
+--             vim.cmd.normal({ "[c", bang = true })
+--           else
+--             gs.nav_hunk("prev")
+--           end
+--         end, "Prev Hunk")
+--         map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
+--         map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
+--         map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
+--         map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
+--         map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
+--         map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage Hunk")
+--         map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
+--         map("n", "<leader>ghp", gs.preview_hunk_inline, "Preview Hunk Inline")
+--         map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
+--         map("n", "<leader>ghB", function() gs.blame() end, "Blame Buffer")
+--         map("n", "<leader>ghd", gs.diffthis, "Diff This")
+--         map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
+--         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
+--       end,
+--     },
+--   },
+--
+--
+--   {
+--     "nvim-lualine/lualine.nvim",
+--     opts = function()
+--       -- PERF: we don't need this lualine require madness 🤷
+--       local lualine_require = require("lualine_require")
+--       lualine_require.require = require
+--
+--       local icons = LazyVim.config.icons
+--
+--       vim.o.laststatus = vim.g.lualine_laststatus
+--
+--       local opts = {
+--         options = {
+--           theme = "auto",
+--           component_separators = { left = '', right = '' },
+--           section_separators = { left = '', right = '' },
+--           globalstatus = vim.o.laststatus == 3,
+--           disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter" } },
+--         },
+--         sections = {
+--           lualine_a = { "mode" },
+--           lualine_b = { {"branch", icon = "⎇" }, },
+--
+--           lualine_c = {
+--             LazyVim.lualine.root_dir(),
+--             {
+--               "diagnostics",
+--               symbols = {
+--                 error = icons.diagnostics.Error,
+--                 warn = icons.diagnostics.Warn,
+--                 info = icons.diagnostics.Info,
+--                 hint = icons.diagnostics.Hint,
+--               },
+--             },
+--             { LazyVim.lualine.pretty_path() },
+--           },
+--           lualine_x = {'encoding', 'filetype'},
+--           lualine_y = {
+--             -- stylua: ignore
+--             {
+--               function() return require("noice").api.status.command.get() end,
+--               cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+--               color = function() return LazyVim.ui.fg("Statement") end,
+--             },
+--             -- stylua: ignore
+--             {
+--               function() return require("noice").api.status.mode.get() end,
+--               cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+--               color = function() return LazyVim.ui.fg("Constant") end,
+--             },
+--             -- stylua: ignore
+--             {
+--               function() return "  " .. require("dap").status() end,
+--               cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
+--               color = function() return LazyVim.ui.fg("Debug") end,
+--             },
+--             -- stylua: ignore
+--             {
+--               require("lazy.status").updates,
+--               cond = require("lazy.status").has_updates,
+--               color = function() return LazyVim.ui.fg("Special") end,
+--             },
+--             {
+--               "diff",
+--               symbols = {
+--                 added = icons.git.added,
+--                 modified = icons.git.modified,
+--                 removed = icons.git.removed,
+--               },
+--               source = function()
+--                 local gitsigns = vim.b.gitsigns_status_dict
+--                 if gitsigns then
+--                   return {
+--                     added = gitsigns.added,
+--                     modified = gitsigns.changed,
+--                     removed = gitsigns.removed,
+--                   }
+--                 end
+--               end,
+--             },
+--           },
+--           lualine_z = {
+--             { "location", padding = { left = 0, right = 1 } },
+--             { "progress", separator = " ", padding = { left = 0, right = 1 } },
+--           },
+--         },
+--         extensions = { "neo-tree", "lazy" },
+--       }
+--
+--       -- do not add trouble symbols if aerial is enabled
+--       -- And allow it to be overriden for some buffer types (see autocmds)
+--       if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
+--         local trouble = require("trouble")
+--         local symbols = trouble.statusline({
+--           mode = "symbols",
+--           groups = {},
+--           title = false,
+--           filter = { range = true },
+--           format = "{kind_icon}{symbol.name:Normal}",
+--           hl_group = "lualine_c_normal",
+--         })
+--         table.insert(opts.sections.lualine_c, {
+--           symbols and symbols.get,
+--           cond = function()
+--             return vim.b.trouble_lualine ~= false and symbols.has()
+--           end,
+--         })
+--       end
+--
+--       return opts
+--     end,
+--   },
+--
+--
+--   {
+--     "neovim/nvim-lspconfig",
+--     opts = function()
+--       ---@class PluginLspOpts
+--       local ret = {
+--         -- options for vim.diagnostic.config()
+--         ---@type vim.diagnostic.Opts
+--         diagnostics = {
+--           underline = true,
+--           update_in_insert = false,
+--           virtual_text = {
+--             spacing = 4,
+--             source = "if_many",
+--             prefix = "●",
+--             -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
+--             -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
+--             -- prefix = "icons",
+--           },
+--           severity_sort = true,
+--           signs = {
+--             text = {
+--               [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
+--               [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
+--               [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
+--               [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
+--             },
+--           },
+--         },
+--         -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
+--         -- Be aware that you also will need to properly configure your LSP server to
+--         -- provide the inlay hints.
+--         inlay_hints = {
+--           enabled = true,
+--           exclude = { "vue" }, -- filetypes for which you don't want to enable inlay hints
+--         },
+--         -- Enable this to enable the builtin LSP code lenses on Neovim >= 0.10.0
+--         -- Be aware that you also will need to properly configure your LSP server to
+--         -- provide the code lenses.
+--         codelens = {
+--           enabled = false,
+--         },
+--         -- Enable lsp cursor word highlighting
+--         document_highlight = {
+--           enabled = true,
+--         },
+--         -- add any global capabilities here
+--         capabilities = {
+--           workspace = {
+--             fileOperations = {
+--               didRename = true,
+--               willRename = true,
+--             },
+--           },
+--         },
+--         -- options for vim.lsp.buf.format
+--         -- `bufnr` and `filter` is handled by the LazyVim formatter,
+--         -- but can be also overridden when specified
+--         format = {
+--           formatting_options = nil,
+--           timeout_ms = nil,
+--         },
+--         -- LSP Server Settings
+--         ---@type lspconfig.options
+--         servers = {
+--           lua_ls = {
+--             -- mason = false, -- set to false if you don't want this server to be installed with mason
+--             -- Use this to add any additional keymaps
+--             -- for specific lsp servers
+--             -- ---@type LazyKeysSpec[]
+--             -- keys = {},
+--             settings = {
+--               Lua = {
+--                 workspace = {
+--                   checkThirdParty = false,
+--                 },
+--                 codeLens = {
+--                   enable = true,
+--                 },
+--                 completion = {
+--                   callSnippet = "Replace",
+--                 },
+--                 doc = {
+--                   privateName = { "^_" },
+--                 },
+--                 hint = {
+--                   enable = true,
+--                   setType = false,
+--                   paramType = true,
+--                   paramName = "Disable",
+--                   semicolon = "Disable",
+--                   arrayIndex = "Disable",
+--                 },
+--               },
+--             },
+--           },
+--         },
+--         -- you can do any additional lsp server setup here
+--         -- return true if you don't want this server to be setup with lspconfig
+--         ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
+--         setup = {
+--           -- example to setup with typescript.nvim
+--           -- tsserver = function(_, opts)
+--           --   require("typescript").setup({ server = opts })
+--           --   return true
+--           -- end,
+--           -- Specify * to use this function as a fallback for any server
+--           -- ["*"] = function(server, opts) end,
+--         },
+--       }
+--       return ret
+--     end,
+--   },
+--
+-- --   {"folke/noice.nvim", enabled = false},
+-- }
